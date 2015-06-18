@@ -50,7 +50,7 @@ class Discount
     {
         if (!is_string($name)) {
             throw new InvalidArgumentException(
-                '$name is invalid, must be a string'
+                "$name is invalid, must be a string"
             );
         }
         
@@ -78,7 +78,7 @@ class Discount
     {
         if (!is_numeric($price)) {
             throw new InvalidArgumentException(
-                '$price is invalid, must be numeric'
+                "$price is invalid, must be numeric"
             );
         }
         
@@ -106,7 +106,7 @@ class Discount
     {
         if (!is_int($volume)) {
             throw new InvalidArgumentException(
-                '$volume is invalid, must be integer'
+                "$volume is invalid, must be integer"
             );
         }
        

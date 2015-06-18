@@ -23,10 +23,10 @@ $input = 'ABCDABAA';
 $products = str_split($input, 1);
 
 if (is_array($products) && !empty($products)) {
-    foreach($products as $name)
+    foreach ($products as $name) {
         $terminal->scan($name);
+    }
 }
 
-$cart = $terminal->getCart();
 $total = $terminal->total();
 var_dump($total);

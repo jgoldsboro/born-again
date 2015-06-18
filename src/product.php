@@ -48,7 +48,7 @@ class Product
     {
         if (!is_string($name)) {
             throw new InvalidArgumentException(
-                '$name is invalid, must be string'
+                "$name is invalid, must be string"
             );
         }
         
@@ -76,7 +76,7 @@ class Product
     {
         if (!is_numeric($price)) {
             throw new InvalidArgumentException(
-                '$price is invalid, must be numeric.'
+                "$price is invalid, must be numeric"
             );
         }
         
@@ -104,7 +104,7 @@ class Product
     {
         if (!($discount instanceof Discount)) {
             throw new InvalidArgumentType(
-                '$discount is invalid, must be a discount'
+                "$discount is invalid, must be a discount"
             );
         }
         

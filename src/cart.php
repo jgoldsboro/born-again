@@ -30,7 +30,7 @@ class Cart
 
         if (!array_key_exists($name, $this->products)) {
             throw new InvalidArgumentException(
-                '$name is an invalid product name'
+                "$name is an invalid product name"
             ); 
         }
         

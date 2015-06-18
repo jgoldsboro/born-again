@@ -33,7 +33,7 @@ class Terminal
     {
         if (array_key_exists($name,$this->products)) {
             throw new InvalidArgumentException(
-                '$name is invalid, duplicate found'
+                "$name is invalid, duplicate found"
             );
         }
         
@@ -78,7 +78,7 @@ class Terminal
     {
         if (!array_key_exists($name, $this->products)) {
             throw new InvalidArgumentException(
-                '$name is an invalid product'
+                "$name is an invalid product"
             );
         }
         
@@ -153,8 +153,14 @@ class Terminal
 
         foreach ($discounts as $discount) {
             $volume = $discount->getVolume();
-            if ($qty >= $volume)
-                $this->applyDiscount($discount->getPrice(), $qty, $volume, $total);
+            if ($qty >= $volume) {
+                $this->applyDiscount(
+                    $discount->getPrice(), 
+                    $qty, 
+                    $volume, 
+                    $total
+                );
+            }
         }
 
         if ($qty > 0)
@@ -189,5 +195,16 @@ class Terminal
     private function compare($a, $b)
     {
         return $a->getVolume() < $b->getVolume();
+    }
+
+    /**
+     * Empty cart
+     * @return void
+     */
+    public function emptyCart()
+    {
+        foreach ($this->products as $product) {
+            $this->cart->deleteProduct($product);
+        }
     }
 }
