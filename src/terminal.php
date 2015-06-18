@@ -123,7 +123,7 @@ class Terminal
         if (empty($discounts)) {
             return $this->calculateHardPrice($price,$qty); 
         } else {
-            return $this->caclulateProductDiscount($price, $discounts, $qty);
+            return $this->calculateProductDiscount($price, $discounts, $qty);
         }
     }
     
@@ -145,7 +145,7 @@ class Terminal
      * @param integer $qty
      * @return float $total
      */
-    private function caclulateProductDiscount($price, $discounts, $qty)
+    private function calculateProductDiscount($price, $discounts, $qty)
     {
         $total = 0;
         //Sort discounts by volume to apply the largest discount first.
